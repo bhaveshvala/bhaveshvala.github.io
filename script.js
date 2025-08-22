@@ -12,8 +12,16 @@ function initMobileMenu() {
   const mobileMenu = document.getElementById("mobile-menu")
   const navMenu = document.querySelector(".nav-menu")
 
+  if (!mobileMenu || !navMenu) {
+    console.log("[v0] Mobile menu elements not found")
+    return
+  }
+
   // Toggle mobile menu on click
-  mobileMenu.addEventListener("click", () => {
+  mobileMenu.addEventListener("click", (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    console.log("[v0] Mobile menu clicked")
     mobileMenu.classList.toggle("active")
     navMenu.classList.toggle("active")
   })
@@ -22,6 +30,7 @@ function initMobileMenu() {
   const navLinks = document.querySelectorAll(".nav-link")
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
+      console.log("[v0] Nav link clicked, closing mobile menu")
       mobileMenu.classList.remove("active")
       navMenu.classList.remove("active")
     })
@@ -32,6 +41,7 @@ function initMobileMenu() {
     const isClickInsideNav = navMenu.contains(event.target) || mobileMenu.contains(event.target)
 
     if (!isClickInsideNav && navMenu.classList.contains("active")) {
+      console.log("[v0] Clicked outside, closing mobile menu")
       mobileMenu.classList.remove("active")
       navMenu.classList.remove("active")
     }
@@ -239,18 +249,122 @@ function submitForm(formData) {
 
   // Simulate API call delay
   setTimeout(() => {
+    appendToLeadsJSON(formData)
+
     // Reset button
     submitButton.innerHTML = originalText
     submitButton.disabled = false
 
-    // Show success message
-    alert("Thank you for your message! I will get back to you soon.")
+    showSuccessMessage("Thank you for your message! I will get back to you soon.")
 
     // Reset form
     document.getElementById("contactForm").reset()
 
-    console.log("Form submitted with data:", formData)
+    console.log("[v0] Form submitted with data:", formData)
   }, 2000)
+}
+
+function showSuccessMessage(message) {
+  // Create success message element
+  const successDiv = document.createElement("div")
+  successDiv.className = "success-message"
+  successDiv.innerHTML = `
+    <div class="success-content">
+      <i class="fas fa-check-circle"></i>
+      <p>${message}</p>
+      <button onclick="this.parentElement.parentElement.remove()" class="close-btn">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+  `
+
+  // Add styles
+  successDiv.style.cssText = `
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+    max-width: 400px;
+    animation: slideIn 0.3s ease-out;
+  `
+
+  // Add animation styles to head if not exists
+  if (!document.querySelector("#success-animation-styles")) {
+    const style = document.createElement("style")
+    style.id = "success-animation-styles"
+    style.textContent = `
+      @keyframes slideIn {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+      }
+      .success-content {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .success-content i.fa-check-circle {
+        font-size: 20px;
+      }
+      .success-content p {
+        margin: 0;
+        flex: 1;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 3px;
+      }
+      .close-btn:hover {
+        background: rgba(255,255,255,0.2);
+      }
+    `
+    document.head.appendChild(style)
+  }
+
+  // Add to page
+  document.body.appendChild(successDiv)
+
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (successDiv.parentElement) {
+      successDiv.remove()
+    }
+  }, 5000)
+}
+
+function appendToLeadsJSON(formData) {
+  // Get existing leads from localStorage (temporary storage for leads page)
+  const existingLeads = localStorage.getItem("contactLeads")
+  const leads = existingLeads ? JSON.parse(existingLeads) : []
+
+  // Add new lead with timestamp
+  const newLead = {
+    ...formData,
+    date: new Date().toISOString(),
+    id: Date.now(),
+  }
+
+  leads.push(newLead)
+
+  // Save to localStorage (for leads page to read)
+  localStorage.setItem("contactLeads", JSON.stringify(leads))
+
+  // In a real application, this would make an API call to append to leads.json
+  // For now, we'll simulate this by updating the leads.json structure
+  console.log("[v0] New lead added to storage:", newLead)
+  console.log("[v0] Total leads in storage:", leads.length)
+
+  // Note: In a real server environment, you would make an API call here
+  // to append the new lead to the leads.json file on the server
+  // Example: fetch('/api/leads', { method: 'POST', body: JSON.stringify(newLead) })
 }
 
 // Scroll Effects and Animations

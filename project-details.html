@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details - Bhavesh Vala</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Navbar Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <h2>Bhavesh Vala</h2>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#skills" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#projects" class="nav-link">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="leads.html" class="nav-link">Leads</a>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Menu Toggle -->
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Project Details Section -->
+    <section class="project-details">
+        <div class="container">
+            <div class="project-hero">
+                <h1 id="projectTitle">Project Title</h1>
+                <div class="project-meta">
+                    <span id="projectStatus">Status</span>
+                    <span id="projectType">Type</span>
+                    <span id="projectYear">Year</span>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#" id="liveDemo" target="_blank" class="btn btn-primary" style="display:none;">
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="index.html#projects" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Projects
+                    </a>
+                </div>
+            </div>
+
+            <!-- <div class="project-gallery">
+                <h2>Project Gallery</h2>
+                <div class="gallery-grid" id="projectGallery">
+                    
+                </div>
+            </div> -->
+
+            <div class="project-info">
+                <div class="project-description">
+                    <h2>Project Description</h2>
+                    <div id="projectDescription">
+                        <!-- Project description will be populated here -->
+                    </div>
+                    
+                    <h2>Key Features</h2>
+                    <ul id="projectFeatures">
+                        <!-- Project features will be populated here -->
+                    </ul>
+                    
+                    <h2>Challenges & Solutions</h2>
+                    <div id="projectChallenges">
+                        <!-- Project challenges will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="project-sidebar">
+                    <h3>Project Details</h3>
+                    <ul>
+                        <li><strong>Client:</strong> <span id="projectClient">-</span></li>
+                        <li><strong>Duration:</strong> <span id="projectDuration">-</span></li>
+                        <li><strong>Team Size:</strong> <span id="projectTeam">-</span></li>
+                        <li><strong>My Role:</strong> <span id="projectRole">-</span></li>
+                    </ul>
+                    
+                    <h3>Technologies Used</h3>
+                    <div id="projectTechnologies">
+                        <!-- Technologies will be populated here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p>&copy; 2025 Bhavesh Vala. All rights reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://stackoverflow.com/users/4083566/bhavesh-vala" target="_blank" class="footer-link">
+                        <i class="fab fa-stack-overflow"></i> StackOverflow
+                    </a>
+                    <a href="https://profiles.wordpress.org/vala-bhavesh/" target="_blank" class="footer-link">
+                        <i class="fab fa-wordpress"></i> WordPress.org
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <script>
+        // Project data
+        const projectData = {
+            'namechange': {
+                title: 'Namechange',
+                status: 'Completed',
+                type: 'E-commerce',
+                year: '2024',
+                client: 'Namechange Inc.',
+                duration: '6 months',
+                team: '3 developers',
+                role: 'Lead WordPress Developer',
+                liveDemo: 'https://namechange.btdemo.biz/',
+                description: `
+                    <p>Namechange is a comprehensive platform designed to simplify the name change process for individuals going through marriage, divorce, or personal preference changes. The platform provides personalized Name Change Kits that guide users through the complex legal requirements.</p>
+                    <p>Built with WordPress and WooCommerce, the platform features a sophisticated questionnaire system that generates customized documentation packages based on user location and specific circumstances.</p>
+                `,
+                features: [
+                    'Custom questionnaire system for personalized name change kits',
+                    'State-specific legal document generation',
+                    'Secure payment processing with multiple gateways',
+                    'User account management and order tracking',
+                    'Automated email notifications and reminders',
+                    'Mobile-responsive design for all devices'
+                ],
+                challenges: `
+                    <p><strong>Challenge:</strong> Creating a system that could handle the complex legal requirements across different states while maintaining user-friendly experience.</p>
+                    <p><strong>Solution:</strong> Developed a dynamic questionnaire system with conditional logic that adapts based on user location and circumstances, integrated with a robust document generation system.</p>
+                `,
+                technologies: ['WordPress', 'WooCommerce', 'PHP', 'MySQL', 'JavaScript', 'API Integration'],
+                gallery: [
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600'
+                ]
+            },
+            'consumer-insite': {
+                title: 'Consumer Insite',
+                status: 'Completed',
+                type: 'Content Platform',
+                year: '2024',
+                client: 'Consumer Insite',
+                duration: '4 months',
+                team: '2 developers',
+                role: 'WordPress Developer',
+                liveDemo: 'https://consumerinsite.com/',
+                description: `
+                    <p>Consumer Insite is a financial education platform that simplifies complex financial topics through well-researched, easy-to-understand articles. The platform empowers users with deep clarity on financial topics to make informed decisions.</p>
+                    <p>Built with WordPress and Elementor, the site features a clean, professional design optimized for content consumption and user engagement.</p>
+                `,
+                features: [
+                    'Content management system for financial articles',
+                    'Advanced search and filtering capabilities',
+                    'Newsletter subscription system',
+                    'Social media integration',
+                    'SEO-optimized content structure',
+                    'Mobile-first responsive design'
+                ],
+                challenges: `
+                    <p><strong>Challenge:</strong> Creating a content platform that could present complex financial information in an accessible and engaging way.</p>
+                    <p><strong>Solution:</strong> Implemented a custom content structure with Elementor, focusing on readability and user experience with clear typography and intuitive navigation.</p>
+                `,
+                technologies: ['WordPress', 'Elementor', 'Contact Form 7', 'SEO Optimization'],
+                gallery: [
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600'
+                ]
+            },
+            'one-green': {
+                title: 'One Green Multi-vendor E-commerce',
+                status: 'Completed',
+                type: 'E-commerce',
+                year: '2023',
+                client: 'One Green',
+                duration: '8 months',
+                team: '4 developers',
+                role: 'Senior WordPress Developer',
+                liveDemo: 'https://onegreen.in/',
+                description: `
+                    <p>One Green is a comprehensive multi-vendor e-commerce platform that connects eco-friendly product vendors with environmentally conscious consumers. The platform features advanced vendor management, product catalog, and order processing systems.</p>
+                    <p>Built with WooCommerce and custom multi-vendor extensions, the platform handles complex vendor onboarding, commission management, and product approval workflows.</p>
+                `,
+                features: [
+                    'Multi-vendor marketplace functionality',
+                    'Vendor dashboard and management system',
+                    'Commission and payout management',
+                    'Product approval workflow',
+                    'Advanced search and filtering',
+                    'Integrated payment gateways',
+                    'Order tracking and management',
+                    'Review and rating system'
+                ],
+                challenges: `
+                    <p><strong>Challenge:</strong> Building a scalable multi-vendor platform that could handle complex vendor relationships while maintaining performance.</p>
+                    <p><strong>Solution:</strong> Implemented custom WooCommerce extensions with optimized database queries and caching strategies to ensure smooth operation even with hundreds of vendors.</p>
+                `,
+                technologies: ['WooCommerce', 'Multi-vendor', 'PHP', 'MySQL', 'JavaScript'],
+                gallery: [
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600'
+                ]
+            },
+            'vamja-developers': {
+                title: 'Vamja Developers',
+                status: 'Completed',
+                type: 'Real Estate',
+                year: '2023',
+                client: 'Vamja Developers',
+                duration: '3 months',
+                team: '2 developers',
+                role: 'WordPress Developer',
+                liveDemo: 'https://vamjadevelopers.btdemo.biz/',
+                description: `
+                    <p>Vamja Developers is a real estate development company website showcasing their building revolution approach. The site features property listings, company information, and contact systems for potential clients.</p>
+                    <p>Built with WordPress and Elementor using a premium ThemeForest theme, customized to match the company's branding and requirements.</p>
+                `,
+                features: [
+                    'Property showcase and listings',
+                    'Company portfolio and projects',
+                    'Contact and inquiry forms',
+                    'Image galleries and virtual tours',
+                    'Responsive design for all devices',
+                    'SEO optimization'
+                ],
+                challenges: `
+                    <p><strong>Challenge:</strong> Customizing a premium theme to match specific branding requirements while maintaining performance.</p>
+                    <p><strong>Solution:</strong> Created custom child theme with targeted CSS and PHP modifications, ensuring updates wouldn't break customizations.</p>
+                `,
+                technologies: ['WordPress', 'Elementor', 'ThemeForest Theme', 'Custom CSS'],
+                gallery: [
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600'
+                ]
+            },
+            'headless-cms': {
+                title: 'HeadLess CMS With Multi Language',
+                status: 'Completed',
+                type: 'Headless CMS',
+                year: '2024',
+                client: 'Tech Startup',
+                duration: '5 months',
+                team: '3 developers',
+                role: 'Lead Developer',
+                liveDemo: 'https://web-headlesscms.btdemo.biz/',
+                description: `
+                    <p>A headless WordPress implementation that decouples content management from front-end delivery, providing developers with complete freedom to build fast, flexible, and modern digital experiences.</p>
+                    <p>Features multi-language support through WPML and custom field management with ACF, delivering content via REST API to various front-end applications.</p>
+                `,
+                features: [
+                    'Headless WordPress architecture',
+                    'Multi-language content management',
+                    'Custom REST API endpoints',
+                    'Advanced Custom Fields integration',
+                    'Content versioning and workflow',
+                    'API authentication and security'
+                ],
+                challenges: `
+                    <p><strong>Challenge:</strong> Creating a headless CMS that could efficiently serve multi-language content to multiple front-end applications.</p>
+                    <p><strong>Solution:</strong> Developed custom REST API endpoints with WPML integration, implementing caching strategies and API optimization for fast content delivery.</p>
+                `,
+                technologies: ['WordPress', 'WPML', 'ACF', 'REST API', 'Custom Development'],
+                gallery: [
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600'
+                ]
+            },
+            'headless-woocommerce': {
+                title: 'HeadLess WooCommerce With Multi Currency and Multi Language',
+                status: 'Completed',
+                type: 'Headless E-commerce',
+                year: '2024',
+                client: 'Global E-commerce',
+                duration: '7 months',
+                team: '5 developers',
+                role: 'Technical Lead',
+                liveDemo: 'https://skill-surfing.com/',
+                description: `
+                    <p>A sophisticated headless WooCommerce implementation with multi-currency and multi-language support, delivering seamless global shopping experiences across any front-end platform.</p>
+                    <p>The system provides RESTful APIs for product management, order processing, and customer management while supporting multiple currencies and languages simultaneously.</p>
+                `,
+                features: [
+                    'Headless WooCommerce architecture',
+                    'Multi-currency support with real-time conversion',
+                    'Multi-language product and content management',
+                    'Custom REST API for e-commerce operations',
+                    'Advanced Custom Fields for product data',
+                    'Global payment gateway integration',
+                    'Order management and tracking APIs',
+                    'Customer account management'
+                ],
+                challenges: `
+                    <p><strong>Challenge:</strong> Building a headless e-commerce system that could handle complex multi-currency and multi-language requirements while maintaining performance.</p>
+                    <p><strong>Solution:</strong> Implemented custom WooCommerce REST API extensions with optimized database queries, currency conversion caching, and language-specific content delivery mechanisms.</p>
+                `,
+                technologies: ['WordPress', 'WPML', 'WooCommerce', 'Multi Currency', 'ACF', 'Custom Development', 'RESTful API'],
+                gallery: [
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600',
+                    '/placeholder.svg?height=400&width=600'
+                ]
+            }
+        };
+
+        // Load project details when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const projectId = urlParams.get('project');
+            
+            if (projectId && projectData[projectId]) {
+                loadProjectDetails(projectData[projectId]);
+            } else {
+                // Redirect to projects page if no valid project ID
+                window.location.href = 'index.html#projects';
+            }
+        });
+
+        function loadProjectDetails(project) {
+            // Update page title
+            document.title = `${project.title} - Bhavesh Vala`;
+            
+            // Update project hero
+            document.getElementById('projectTitle').textContent = project.title;
+            document.getElementById('projectStatus').textContent = project.status;
+            document.getElementById('projectType').textContent = project.type;
+            document.getElementById('projectYear').textContent = project.year;
+            document.getElementById('liveDemo').href = project.liveDemo;
+            
+            // Update project description
+            document.getElementById('projectDescription').innerHTML = project.description;
+            
+            // Update project features
+            const featuresList = document.getElementById('projectFeatures');
+            featuresList.innerHTML = project.features.map(feature => `<li>${feature}</li>`).join('');
+            
+            // Update challenges
+            document.getElementById('projectChallenges').innerHTML = project.challenges;
+            
+            // Update sidebar details
+            document.getElementById('projectClient').textContent = project.client;
+            document.getElementById('projectDuration').textContent = project.duration;
+            document.getElementById('projectTeam').textContent = project.team;
+            document.getElementById('projectRole').textContent = project.role;
+            
+            // Update technologies
+            const techContainer = document.getElementById('projectTechnologies');
+            techContainer.innerHTML = project.technologies.map(tech => 
+                `<span class="tech-tag">${tech}</span>`
+            ).join('');
+            
+            // Update gallery
+            const gallery = document.getElementById('projectGallery');
+            gallery.innerHTML = project.gallery.map(image => 
+                `<div class="gallery-item"><img src="${image}" alt="${project.title}"></div>`
+            ).join('');
+        }
+    </script>
+</body>
+</html>
